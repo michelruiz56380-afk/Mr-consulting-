@@ -8,7 +8,7 @@ au fil des sections (chaos → sphère → trajectoire → grille d’audit → 
 
 | Brique | Choix | Pourquoi |
 | --- | --- | --- |
-| Framework | Next.js 16 (App Router, TypeScript) | Pages pré-rendues statiquement (SEO, Core Web Vitals), route API pour le formulaire |
+| Framework | Next.js 16 (App Router, TypeScript) | Pages pré-rendues statiquement (SEO, Core Web Vitals), route API pour le formulaire (fonction Netlify) |
 | Animations | GSAP 3 + ScrollTrigger + SplitText | Standard des grandes agences, robuste, gratuit depuis 2025 |
 | Défilement | Lenis | Scroll inertiel synchronisé avec ScrollTrigger |
 | Visuel narratif | Canvas 2D maison (`components/StoryCanvas.tsx`) | Effet « 3D » (perspective, rotation) sans le poids de Three.js ; mis en pause hors écran |
@@ -50,7 +50,7 @@ Tous les textes sont dans **`lib/content.ts`** — aucun autre fichier à touche
   ```
 - **Mentions légales** : objet `legal` (SIRET, adresse, forme juridique… à compléter avant la mise en ligne).
 
-Après modification : `git commit` + `git push` → redéploiement automatique (Vercel).
+Après modification : `git commit` + `git push` → redéploiement automatique (Netlify).
 
 ## Animations : comment ça marche
 
@@ -72,11 +72,15 @@ Les animations sont déclarées par attributs HTML et appliquées par `component
 Accessibilité : `prefers-reduced-motion` désactive Lenis, les révélations et la rotation des particules.
 Mobile : moins de particules, densité de pixels plafonnée, piste horizontale remplacée par une liste verticale.
 
-## Déploiement
+## Déploiement (Netlify)
 
-Recommandé : **Vercel** (zéro configuration, route API incluse, HTTPS, CDN).
-Renseigner les variables d’environnement dans le projet Vercel, puis rattacher le domaine.
-En-têtes de sécurité (CSP, HSTS…) définis dans `next.config.ts`.
+1. Sur https://app.netlify.com : **Add new site → Import an existing project → GitHub**, choisir le dépôt `Mr-consulting-`.
+2. Branche à déployer : `claude/mr-consulting-site`. Les réglages de build sont lus dans `netlify.toml` (rien à saisir).
+3. **Site configuration → Environment variables** : ajouter les variables de `.env.example`
+   (au minimum `NEXT_PUBLIC_SITE_URL`, `RESEND_API_KEY`, `CONTACT_FROM`), puis relancer un déploiement.
+4. **Domain management** : rattacher le domaine définitif (HTTPS automatique).
+
+Chaque `git push` sur la branche redéploie le site. En-têtes de sécurité (CSP, HSTS…) définis dans `next.config.ts`.
 
 ## Avant la mise en ligne — à fournir / valider
 

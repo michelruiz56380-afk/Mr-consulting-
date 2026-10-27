@@ -295,9 +295,9 @@ export const legal = {
   address: "[Adresse du siège social]",
   publisher: "Michel Ruiz",
   host: {
-    name: "Vercel Inc.",
-    address: "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
-    url: "https://vercel.com",
+    name: "Netlify, Inc.",
+    address: "512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis",
+    url: "https://www.netlify.com",
   },
   updated: "27 octobre 2026",
 };

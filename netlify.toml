@@ -1,0 +1,9 @@
+# Déploiement Netlify : Next.js est détecté automatiquement (adaptateur OpenNext),
+# y compris la route API du formulaire de contact (exécutée en fonction serverless).
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
