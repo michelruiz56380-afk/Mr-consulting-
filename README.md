@@ -8,11 +8,11 @@ au fil des sections (chaos → sphère → trajectoire → grille d’audit → 
 
 | Brique | Choix | Pourquoi |
 | --- | --- | --- |
-| Framework | Next.js 16 (App Router, TypeScript) | Pages pré-rendues statiquement (SEO, Core Web Vitals), route API pour le formulaire (fonction Netlify) |
+| Framework | Next.js 16 (App Router, TypeScript) | Pages pré-rendues statiquement (SEO, Core Web Vitals), aucun serveur ni base de données |
 | Animations | GSAP 3 + ScrollTrigger + SplitText | Standard des grandes agences, robuste, gratuit depuis 2025 |
 | Défilement | Lenis | Scroll inertiel synchronisé avec ScrollTrigger |
 | Visuel narratif | Canvas 2D maison (`components/StoryCanvas.tsx`) | Effet « 3D » (perspective, rotation) sans le poids de Three.js ; mis en pause hors écran |
-| E-mails | Resend (API HTTP, sans dépendance) | Notification + accusé de réception |
+| Contact | Formulaire de michelruiz.fr | Tous les boutons « contact » y redirigent ; aucune donnée collectée par ce site |
 | Analytics | Plausible (optionnel) | Sans cookie → pas de bandeau de consentement requis |
 
 ## Démarrer
@@ -27,14 +27,13 @@ npm run typecheck
 
 ## Variables d’environnement
 
-Voir `.env.example`. Indispensables en production :
+Voir `.env.example`. Aucune n’est obligatoire pour que le site fonctionne ; à renseigner pour la production :
 
 - `NEXT_PUBLIC_SITE_URL` — domaine définitif (SEO, sitemap, Open Graph).
-- `RESEND_API_KEY` et `CONTACT_FROM` — **sans elles, le formulaire renvoie une erreur en production**
-  (choix volontaire : ne jamais afficher « envoyé » si la demande est perdue). En développement, l’envoi est simulé.
-- `CONTACT_TO` — destinataire des demandes (par défaut `NEXT_PUBLIC_CONTACT_EMAIL`).
-
-Optionnelles : `NEXT_PUBLIC_BOOKING_URL` (bouton « Réserver un créneau »), `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`.
+- `NEXT_PUBLIC_CONTACT_URL` — page de contact cible (par défaut `https://michelruiz.fr/contact`).
+  L’ancienne adresse `/contact` du site redirige aussi vers cette page.
+- `NEXT_PUBLIC_CONTACT_EMAIL` — adresse e-mail affichée.
+- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — mesure d’audience (optionnelle).
 
 ## Mettre à jour les contenus (formation courte)
 
@@ -77,7 +76,7 @@ Mobile : moins de particules, densité de pixels plafonnée, piste horizontale r
 1. Sur https://app.netlify.com : **Add new site → Import an existing project → GitHub**, choisir le dépôt `Mr-consulting-`.
 2. Branche à déployer : `claude/mr-consulting-site`. Les réglages de build sont lus dans `netlify.toml` (rien à saisir).
 3. **Site configuration → Environment variables** : ajouter les variables de `.env.example`
-   (au minimum `NEXT_PUBLIC_SITE_URL`, `RESEND_API_KEY`, `CONTACT_FROM`), puis relancer un déploiement.
+   (au minimum `NEXT_PUBLIC_SITE_URL`), puis relancer un déploiement.
 4. **Domain management** : rattacher le domaine définitif (HTTPS automatique).
 
 Chaque `git push` sur la branche redéploie le site. En-têtes de sécurité (CSP, HSTS…) définis dans `next.config.ts`.
@@ -86,6 +85,5 @@ Chaque `git push` sur la branche redéploie le site. En-têtes de sécurité (CS
 
 - Domaine définitif et adresse e-mail de contact.
 - Informations légales (`legal` dans `lib/content.ts`).
-- Compte Resend avec domaine expéditeur vérifié (SPF/DKIM).
 - Validation de la section « Notre approche » (5 étapes proposées, non issues du cahier des charges).
 - Témoignages ou cas clients avec accord écrit des personnes citées.

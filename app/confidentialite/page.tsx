@@ -18,10 +18,11 @@ export default function Confidentialite() {
         {site.legalName} — {legal.address} — <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
 
-      <h2>Données collectées via le formulaire de contact</h2>
+      <h2>Données personnelles</h2>
       <p>
-        Nom, adresse e-mail, organisation (facultatif), nature du besoin et message. Ces données sont transmises par
-        e-mail à {site.legalName} ; le site lui-même ne les enregistre dans aucune base de données.
+        Ce site ne comporte aucun formulaire et ne collecte aucune donnée personnelle. Les demandes de contact sont
+        traitées via le formulaire du site <a href={site.contactUrl}>michelruiz.fr</a>, soumis à sa propre politique de
+        confidentialité. Si vous nous écrivez directement par e-mail, vos données sont traitées comme suit :
       </p>
       <ul>
         <li>
@@ -35,9 +36,7 @@ export default function Confidentialite() {
           <strong>Durée de conservation :</strong> 3 ans à compter du dernier contact, sauf relation contractuelle.
         </li>
         <li>
-          <strong>Destinataires :</strong> {site.legalName} uniquement. Sous-traitants techniques : Resend (acheminement des
-          e-mails) et {legal.host.name} (hébergement), encadrés par des clauses contractuelles types pour les
-          transferts hors Union européenne.
+          <strong>Destinataires :</strong> {site.legalName} uniquement.
         </li>
       </ul>
 

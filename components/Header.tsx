@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { nav, hero } from "@/lib/content";
+import { nav, hero, site } from "@/lib/content";
 import Logo from "./Logo";
 
 export default function Header() {
@@ -71,9 +71,9 @@ export default function Header() {
           </ul>
         </nav>
 
-        <Link href="/contact" className="btn btn--small btn--primary nav-cta">
+        <a href={site.contactUrl} className="btn btn--small btn--primary nav-cta">
           {hero.ctaPrimary}
-        </Link>
+        </a>
 
         <button
           className="burger"
@@ -98,7 +98,7 @@ export default function Header() {
           ))}
           <li style={{ transitionDelay: "0.3s" }}>
             <span className="mono">05</span>
-            <Link href="/contact">Contact</Link>
+            <a href={site.contactUrl}>Contact</a>
           </li>
         </ul>
       </div>

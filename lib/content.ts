@@ -15,8 +15,8 @@ export const site = {
   description:
     "MR Consulting accompagne les organisations pour rendre les technologies utiles, maîtrisées et créatrices de valeur — accompagnement, audit, intelligence artificielle, idéation et création.",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@mr-consulting.fr",
-  // Lien de prise de rendez-vous (Calendly, Cal.com…). Laisser vide pour masquer le bouton.
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "",
+  // Les demandes de contact passent par le formulaire de michelruiz.fr.
+  contactUrl: process.env.NEXT_PUBLIC_CONTACT_URL ?? "https://michelruiz.fr/contact",
   founder: "Michel Ruiz",
 };
 
@@ -267,14 +267,6 @@ export const cta = {
   subtitle: "Parlons-en. Premier échange sans engagement.",
   button: "Demander un premier échange",
 };
-
-export const needs = [
-  "Accompagnement",
-  "Audit",
-  "Intelligence artificielle",
-  "Idéation & Création",
-  "Autre",
-] as const;
 
 export const nav = [
   { href: "/accompagnement", label: "Accompagnement" },

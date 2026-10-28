@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { pillars, site } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", ...pillars.map((p) => `/${p.slug}`), "/contact", "/mentions-legales", "/confidentialite"];
+  const paths = ["", ...pillars.map((p) => `/${p.slug}`), "/mentions-legales", "/confidentialite"];
   return paths.map((p) => ({
     url: `${site.url}${p}`,
     changeFrequency: "monthly",
