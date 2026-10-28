@@ -56,6 +56,9 @@ export default function Footer() {
             <a href={site.personalUrl}>michelruiz.fr</a>
           </li>
         </ul>
+        <p className="site-footer__host">
+          {site.legalName} est une activité de {site.founder}. Site hébergé par {site.host}.
+        </p>
       </div>
     </footer>
   );

@@ -19,6 +19,8 @@ export const site = {
   // Mentions légales et politique de confidentialité : celles de michelruiz.fr.
   legalUrl: "https://michelruiz.fr/legal",
   personalUrl: "https://michelruiz.fr",
+  // Hébergeur de ce site (obligation légale : il diffère de celui de michelruiz.fr).
+  host: "Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis",
 };
 
 /** Moyens de contact directs (boutons WhatsApp, Téléphone, E-mail). */

@@ -1288,6 +1288,10 @@ html.menu-open {
 .site-footer__bottom a:hover {
   color: var(--ink);
 }
+.site-footer__host {
+  flex-basis: 100%;
+  font-size: 0.78rem;
+}
 
 /* Responsive ----------------------------------------------------------- */
 
