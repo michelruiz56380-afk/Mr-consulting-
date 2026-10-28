@@ -14,12 +14,12 @@ const csp = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  // Le formulaire de contact est celui de michelruiz.fr : les anciens liens /contact y mènent.
+  // L'ancienne page /contact mène à la section contact de l'accueil.
   async redirects() {
     return [
       {
         source: "/contact",
-        destination: process.env.NEXT_PUBLIC_CONTACT_URL ?? "https://michelruiz.fr/contact",
+        destination: "/#contact",
         permanent: false,
       },
     ];

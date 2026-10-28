@@ -20,9 +20,9 @@ export default function Confidentialite() {
 
       <h2>Données personnelles</h2>
       <p>
-        Ce site ne comporte aucun formulaire et ne collecte aucune donnée personnelle. Les demandes de contact sont
-        traitées via le formulaire du site <a href={site.contactUrl}>michelruiz.fr</a>, soumis à sa propre politique de
-        confidentialité. Si vous nous écrivez directement par e-mail, vos données sont traitées comme suit :
+        Ce site ne comporte aucun formulaire et ne collecte aucune donnée personnelle. Si vous nous contactez par
+        WhatsApp, par téléphone ou par e-mail, les informations que vous transmettez sont traitées comme suit. Les
+        échanges par WhatsApp relèvent en outre de la politique de confidentialité de WhatsApp (Meta).
       </p>
       <ul>
         <li>

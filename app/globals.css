@@ -1010,12 +1010,98 @@ html.menu-open {
   font-size: var(--fs-lead);
   color: var(--muted);
 }
-.cta__panel-mail {
-  font-size: 0.92rem;
-  color: var(--faint);
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
 }
-.cta__panel-mail a {
+.contact-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 112px;
+  padding: 18px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: rgba(5, 7, 13, 0.45);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.5s var(--ease);
+}
+.contact-action svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-action:hover {
+  border-color: var(--cyan);
+  background: rgba(54, 226, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.phone-dialog {
+  width: min(420px, calc(100vw - 32px));
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius) + 6px);
+  background: var(--bg-2);
+  color: var(--ink);
+  box-shadow: 0 40px 120px -30px rgba(0, 0, 0, 0.8);
+}
+.phone-dialog::backdrop {
+  background: rgba(5, 7, 13, 0.7);
+  backdrop-filter: blur(6px);
+}
+.phone-dialog__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 32px;
+}
+.phone-dialog h3 {
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+.phone-dialog p {
   color: var(--muted);
+}
+.phone-dialog .phone-dialog__number {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.phone-dialog__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.phone-dialog__close:hover {
+  color: var(--ink);
 }
 
 /* Pages secondaires ---------------------------------------------------- */
@@ -1105,8 +1191,11 @@ html.menu-open {
 .page-cta__panel .h2 {
   max-width: 16ch;
 }
-.page-cta__panel .hero__ctas {
-  margin-top: 0;
+.page-cta__panel .contact-actions {
+  max-width: 460px;
+}
+.page-cta__next {
+  flex-basis: 100%;
 }
 
 .legal {
@@ -1288,6 +1377,10 @@ html.menu-open {
   }
   .site-footer__grid {
     grid-template-columns: 1fr;
+  }
+  .contact-action {
+    min-height: 96px;
+    font-size: 0.9rem;
   }
 }
 

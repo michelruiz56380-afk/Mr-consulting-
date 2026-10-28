@@ -12,7 +12,7 @@ au fil des sections (chaos → sphère → trajectoire → grille d’audit → 
 | Animations | GSAP 3 + ScrollTrigger + SplitText | Standard des grandes agences, robuste, gratuit depuis 2025 |
 | Défilement | Lenis | Scroll inertiel synchronisé avec ScrollTrigger |
 | Visuel narratif | Canvas 2D maison (`components/StoryCanvas.tsx`) | Effet « 3D » (perspective, rotation) sans le poids de Three.js ; mis en pause hors écran |
-| Contact | Formulaire de michelruiz.fr | Tous les boutons « contact » y redirigent ; aucune donnée collectée par ce site |
+| Contact | Boutons WhatsApp, Téléphone, E-mail | Comme sur michelruiz.fr : contact direct, aucun formulaire ni donnée collectée |
 | Analytics | Plausible (optionnel) | Sans cookie → pas de bandeau de consentement requis |
 
 ## Démarrer
@@ -30,9 +30,6 @@ npm run typecheck
 Voir `.env.example`. Aucune n’est obligatoire pour que le site fonctionne ; à renseigner pour la production :
 
 - `NEXT_PUBLIC_SITE_URL` — domaine définitif (SEO, sitemap, Open Graph).
-- `NEXT_PUBLIC_CONTACT_URL` — page de contact cible (par défaut `https://michelruiz.fr/contact`).
-  L’ancienne adresse `/contact` du site redirige aussi vers cette page.
-- `NEXT_PUBLIC_CONTACT_EMAIL` — adresse e-mail affichée.
 - `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — mesure d’audience (optionnelle).
 
 ## Mettre à jour les contenus (formation courte)
@@ -47,6 +44,7 @@ Tous les textes sont dans **`lib/content.ts`** — aucun autre fichier à touche
   ```ts
   { quote: "…", author: "Prénom Nom", role: "Directrice innovation", company: "Société" }
   ```
+- **Contact** : objet `contact` (numéro de téléphone, WhatsApp, e-mail, message pré-rempli).
 - **Mentions légales** : objet `legal` (SIRET, adresse, forme juridique… à compléter avant la mise en ligne).
 
 Après modification : `git commit` + `git push` → redéploiement automatique (Netlify).

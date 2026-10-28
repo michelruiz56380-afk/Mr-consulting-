@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import StoryCanvas from "@/components/StoryCanvas";
-import { cta, pillars, site } from "@/lib/content";
+import ContactActions from "@/components/ContactActions";
+import { cta, pillars } from "@/lib/content";
 
 const FORMATION: Record<string, number> = {
   accompagnement: 2,
@@ -86,13 +87,11 @@ export default async function PillarPage({ params }: { params: Promise<{ pilier:
       <section className="page-cta container" data-formation={formation} aria-labelledby="page-cta-title">
         <div className="panel page-cta__panel" data-reveal>
           <h2 id="page-cta-title" className="h2">{cta.subtitle}</h2>
-          <div className="hero__ctas">
-            <a href={site.contactUrl} className="btn btn--primary">
-              {cta.button}
-              <span className="btn__arrow" aria-hidden="true">→</span>
-            </a>
-            <Link href={`/${next.slug}`} className="btn btn--ghost">
+          <ContactActions />
+          <div className="page-cta__next">
+            <Link href={`/${next.slug}`} className="link-arrow">
               Expertise suivante : {next.name}
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, site } from "@/lib/content";
+import { contact, nav, site } from "@/lib/content";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -31,10 +31,15 @@ export default function Footer() {
           <p className="mono label">Contact</p>
           <ul>
             <li>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
             </li>
             <li>
-              <a href={site.contactUrl}>Formulaire de contact</a>
+              <a href={`tel:${contact.phoneIntl}`}>{contact.phone}</a>
+            </li>
+            <li>
+              <a href={`mailto:${contact.email}?subject=${encodeURIComponent(contact.emailSubject)}`}>E-mail</a>
             </li>
           </ul>
         </div>

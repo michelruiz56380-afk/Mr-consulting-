@@ -14,10 +14,19 @@ export const site = {
   tagline: "Cabinet de conseil indépendant",
   description:
     "MR Consulting accompagne les organisations pour rendre les technologies utiles, maîtrisées et créatrices de valeur — accompagnement, audit, intelligence artificielle, idéation et création.",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@mr-consulting.fr",
-  // Les demandes de contact passent par le formulaire de michelruiz.fr.
-  contactUrl: process.env.NEXT_PUBLIC_CONTACT_URL ?? "https://michelruiz.fr/contact",
+  email: "contact@michelruiz.fr",
   founder: "Michel Ruiz",
+};
+
+/** Moyens de contact directs (boutons WhatsApp, Téléphone, E-mail). */
+export const contact = {
+  phone: "06 11 62 28 40",
+  phoneIntl: "+33611622840",
+  // Numéro au format international, sans « + » ni espaces.
+  whatsapp: "33611622840",
+  whatsappMessage: "Bonjour, je vous contacte depuis le site MR Consulting.",
+  email: site.email,
+  emailSubject: "Demande MR Consulting",
 };
 
 export const hero = {

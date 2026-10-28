@@ -1,6 +1,7 @@
 import Link from "next/link";
 import StoryCanvas from "@/components/StoryCanvas";
-import { about, cta, hero, pillars, proofs, site, testimonials, why } from "@/lib/content";
+import ContactActions from "@/components/ContactActions";
+import { about, cta, hero, pillars, proofs, testimonials, why } from "@/lib/content";
 
 // Formation de particules associée à chaque pilier (voir StoryCanvas).
 const PILLAR_FORMATION = [2, 3, 4, 5];
@@ -24,7 +25,7 @@ export default function Home() {
             {hero.subtitle}
           </p>
           <div className="hero__ctas" data-intro>
-            <a href={site.contactUrl} className="btn btn--primary">
+            <a href="#contact" className="btn btn--primary">
               {hero.ctaPrimary}
               <span className="btn__arrow" aria-hidden="true">→</span>
             </a>
@@ -206,17 +207,8 @@ export default function Home() {
           </div>
           <div className="panel cta__panel" data-reveal>
             <p className="mono cta__panel-label">Premier échange sans engagement</p>
-            <p className="cta__panel-text">
-              Décrivez votre besoin en quelques lignes : accompagnement, audit, intelligence artificielle ou création.
-              Réponse sous 48 h ouvrées.
-            </p>
-            <a href={site.contactUrl} className="btn btn--primary">
-              {cta.button}
-              <span className="btn__arrow" aria-hidden="true">→</span>
-            </a>
-            <p className="cta__panel-mail">
-              Ou par e-mail : <a href={`mailto:${site.email}`}>{site.email}</a>
-            </p>
+            <p className="cta__panel-text">Choisissez le moyen qui vous convient le mieux pour échanger directement avec moi.</p>
+            <ContactActions />
           </div>
         </div>
       </section>
