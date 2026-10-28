@@ -16,6 +16,9 @@ export const site = {
     "MR Consulting accompagne les organisations pour rendre les technologies utiles, maîtrisées et créatrices de valeur — accompagnement, audit, intelligence artificielle, idéation et création.",
   email: "contact@michelruiz.fr",
   founder: "Michel Ruiz",
+  // Mentions légales et politique de confidentialité : celles de michelruiz.fr.
+  legalUrl: "https://michelruiz.fr/legal",
+  personalUrl: "https://michelruiz.fr",
 };
 
 /** Moyens de contact directs (boutons WhatsApp, Téléphone, E-mail). */
@@ -283,22 +286,3 @@ export const nav = [
   { href: "/intelligence-artificielle", label: "IA" },
   { href: "/ideation-creation", label: "Création" },
 ];
-
-/**
- * Informations légales — À COMPLÉTER avant mise en ligne.
- */
-export const legal = {
-  form: "[Forme juridique — ex. SASU / EURL / EI]",
-  capital: "[Capital social]",
-  siret: "[SIRET]",
-  rcs: "[RCS / RNE]",
-  vat: "[N° TVA intracommunautaire]",
-  address: "[Adresse du siège social]",
-  publisher: "Michel Ruiz",
-  host: {
-    name: "Netlify, Inc.",
-    address: "512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis",
-    url: "https://www.netlify.com",
-  },
-  updated: "27 octobre 2026",
-};

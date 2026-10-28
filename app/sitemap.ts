@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 import { pillars, site } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", ...pillars.map((p) => `/${p.slug}`), "/mentions-legales", "/confidentialite"];
+  const paths = ["", ...pillars.map((p) => `/${p.slug}`)];
   return paths.map((p) => ({
     url: `${site.url}${p}`,
     changeFrequency: "monthly",
-    priority: p === "" ? 1 : p.startsWith("/mentions") || p.startsWith("/confidentialite") ? 0.2 : 0.8,
+    priority: p === "" ? 1 : 0.8,
   }));
 }

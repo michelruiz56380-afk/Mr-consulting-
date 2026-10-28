@@ -50,10 +50,10 @@ export default function Footer() {
         </p>
         <ul>
           <li>
-            <Link href="/mentions-legales">Mentions légales</Link>
+            <a href={site.legalUrl}>Mentions légales</a>
           </li>
           <li>
-            <Link href="/confidentialite">Politique de confidentialité</Link>
+            <a href={site.personalUrl}>michelruiz.fr</a>
           </li>
         </ul>
       </div>

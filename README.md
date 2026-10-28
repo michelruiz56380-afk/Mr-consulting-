@@ -45,7 +45,7 @@ Tous les textes sont dans **`lib/content.ts`** — aucun autre fichier à touche
   { quote: "…", author: "Prénom Nom", role: "Directrice innovation", company: "Société" }
   ```
 - **Contact** : objet `contact` (numéro de téléphone, WhatsApp, e-mail, message pré-rempli).
-- **Mentions légales** : objet `legal` (SIRET, adresse, forme juridique… à compléter avant la mise en ligne).
+- **Mentions légales** : le pied de page renvoie vers https://michelruiz.fr/legal (`site.legalUrl`) ; les anciennes adresses `/mentions-legales` et `/confidentialite` y redirigent.
 
 Après modification : `git commit` + `git push` → redéploiement automatique (Netlify).
 
@@ -82,6 +82,5 @@ Chaque `git push` sur la branche redéploie le site. En-têtes de sécurité (CS
 ## Avant la mise en ligne — à fournir / valider
 
 - Domaine définitif et adresse e-mail de contact.
-- Informations légales (`legal` dans `lib/content.ts`).
 - Validation de la section « Notre approche » (5 étapes proposées, non issues du cahier des charges).
 - Témoignages ou cas clients avec accord écrit des personnes citées.

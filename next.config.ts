@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
         destination: "/#contact",
         permanent: false,
       },
+      // Les mentions légales sont celles de michelruiz.fr.
+      { source: "/mentions-legales", destination: "https://michelruiz.fr/legal", permanent: false },
+      { source: "/confidentialite", destination: "https://michelruiz.fr/legal", permanent: false },
     ];
   },
   async headers() {
