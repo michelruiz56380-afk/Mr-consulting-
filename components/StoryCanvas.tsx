@@ -21,7 +21,8 @@ gsap.registerPlugin(ScrollTrigger);
 type Vec = Float32Array; // x, y, z entrelacés
 
 const FORMATION_COUNT = 8;
-const COLORS = ["#3d6bff", "#36e2ff", "#e9f1ff", "#7a5cff"];
+// Charte éditoriale : majorité ivoire, accent bleu en contrepoint.
+const COLORS = ["#f3f1ec", "#4d7cff", "#f3f1ec", "#7a9cff"];
 
 function rand(seed: { s: number }) {
   // PRNG déterministe (mulberry32) : rendu identique à chaque visite.
@@ -365,7 +366,7 @@ export default function StoryCanvas({ initial = 0 }: { initial?: number }) {
       const netWeight = a === 4 ? 1 - smooth(frac) : b === 4 ? smooth(frac) : 0;
       if (netWeight > 0.02) {
         ctx.globalAlpha = 0.22 * netWeight;
-        ctx.strokeStyle = "#36e2ff";
+        ctx.strokeStyle = "#7a9cff";
         ctx.lineWidth = 0.6;
         ctx.beginPath();
         for (let e = 0; e < edges.length; e += 2) {
@@ -382,8 +383,8 @@ export default function StoryCanvas({ initial = 0 }: { initial?: number }) {
       if (auditWeight > 0.02) {
         const scan = ((time * 0.18) % 1) * h;
         const g = ctx.createLinearGradient(0, scan - 80, 0, scan + 2);
-        g.addColorStop(0, "rgba(54,226,255,0)");
-        g.addColorStop(1, "rgba(54,226,255,0.16)");
+        g.addColorStop(0, "rgba(122,156,255,0)");
+        g.addColorStop(1, "rgba(122,156,255,0.14)");
         ctx.globalAlpha = auditWeight;
         ctx.fillStyle = g;
         ctx.fillRect(0, scan - 80, w, 82);
