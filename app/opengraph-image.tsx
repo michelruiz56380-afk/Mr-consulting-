@@ -17,8 +17,8 @@ export default function OgImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          background: "radial-gradient(circle at 75% 50%, #0d1b4a 0%, #05070d 60%)",
-          color: "#e9f1ff",
+          background: "radial-gradient(circle at 75% 50%, #161a26 0%, #0b0c0f 60%)",
+          color: "#f3f1ec",
           padding: 80,
           position: "relative",
           fontFamily: "sans-serif",
@@ -34,17 +34,17 @@ export default function OgImage() {
               width: 4,
               height: 4,
               borderRadius: 4,
-              background: i % 2 ? "#36e2ff" : "#3d6bff",
+              background: i % 2 ? "#f3f1ec" : "#4d7cff",
               opacity: d.o,
             }}
           />
         ))}
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: 700 }}>
-          <div style={{ fontSize: 28, letterSpacing: 4, color: "#36e2ff", display: "flex" }}>MR CONSULTING</div>
+          <div style={{ fontSize: 28, letterSpacing: 4, color: "#7a9cff", display: "flex" }}>MR CONSULTING</div>
           <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.05, display: "flex" }}>
             Nous rendons les technologies utiles et maîtrisées.
           </div>
-          <div style={{ fontSize: 26, color: "#9aa7c7", display: "flex" }}>
+          <div style={{ fontSize: 26, color: "#a6a39b", display: "flex" }}>
             Accompagnement · Audit · IA · Idéation & Création
           </div>
         </div>

@@ -36,7 +36,7 @@ export const contact = {
 
 export const hero = {
   eyebrow: "MR Consulting — Cabinet de conseil indépendant",
-  titleLines: ["Accompagnement, audit,", "IA et création :"],
+  titleLines: ["Accompagnement, audit,", "IA et création\u00a0:"],
   titleAccent: "nous rendons les technologies utiles et maîtrisées.",
   subtitle:
     "De l’idéation à la mise en œuvre, avec rigueur, pragmatisme et force de création.",
